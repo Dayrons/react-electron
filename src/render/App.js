@@ -1,21 +1,25 @@
 import React from 'react'
-import toast, { Toaster } from 'react-hot-toast';
-import { SiElectron } from 'react-icons/si';
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom"
+import Comienzo from './pages/Comienzo'
+import Documentacion from './pages/Documentacion'
 import './App.scss'
 
 
 
 
 function App() {
-    const notify = () => toast.success('Here is your toast.');
+   
 
     return (
 
-        <div>
-            <SiElectron/>
-            <button onClick={notify}>Make me a toast</button>
-            <Toaster />
-        </div>
+        <HashRouter>
+
+        <Routes>
+          <Route path="/" element={<Comienzo/>} />
+          <Route path="/documentacion" element={<Documentacion/>} />
+        </Routes>
+
+      </HashRouter>
 
     )
 }
